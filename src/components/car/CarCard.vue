@@ -3,7 +3,7 @@
         <img class="img-fluid" :src="car.image" alt="photo">
         <div class="card-body text-start p-0">
             <span class="badge fw-semibold text-dark bg-secondary bg-opacity-50 px-3 py-2 rounded-pill">{{ car.carType }}</span>
-            <span class="badge fw-semibold text-dark bg-secondary bg-opacity-50 px-3 py-2 rounded-pill">1/7 Cars</span>
+            <span class="badge fw-semibold text-dark bg-secondary bg-opacity-50 px-3 py-2 rounded-pill ms-2">1/7 Cars</span>
             <h5 class="cart-title mt-3 mb-4">{{ car.title }}</h5>
             <div class="mt-2 fs-6 d-flex justify-content-between align-items-center" v-for="option in car.options" :key="option.id">
                 <span class="text-muted">

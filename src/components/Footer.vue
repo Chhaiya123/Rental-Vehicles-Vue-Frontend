@@ -50,10 +50,10 @@
                 <h4 class="ms-2 mt-3 fw-semibold fs-4 text-light">Give Feedback</h4>
                 <form action="" class="row g-3 needs-validation mt-3 feedback-info" novalidate>
                   <div class="col-12">
-                    <input type="email" class="form-control fs-6 py-2 px-3 shadow-none rounded-5 border-secondary border-opacity-50 bg-opacity-10 bg-light text-light" placeholder="Your Email" name="email" required>
+                    <input type="email" class="form-control fs-6 py-2 px-3 shadow-none rounded-5 border-secondary border-opacity-50 bg-opacity-10 bg-light text-light" placeholder="Your Email" name="email" id="email" required>
                   </div>
                   <div class="col-12">
-                    <textarea name="message" id="" class="form-control fs-6 py-2 px-3 rounded-5 shadow-none rounded-5 border-secondary border-opacity-50 bg-opacity-10 bg-light text-light" placeholder="Your Message" required></textarea>
+                    <textarea name="message" class="form-control fs-6 py-2 px-3 rounded-5 shadow-none rounded-5 border-secondary border-opacity-50 bg-opacity-10 bg-light text-light" placeholder="Your Message" id="cmt" required></textarea>
                   </div>
                   <div class="col-12">
                     <button type="submit" class="btn btn-outline-light rounded-pill py-2 mt-3 px-3 w-100">Submit</button>

@@ -3,6 +3,7 @@ import HomeView from '@/views/HomeView.vue'
 import ContactUsView from '@/views/ContactUsView.vue'
 import CarDetail from '@/views/CarDetail.vue'
 import AboutView from '@/views/AboutView.vue'
+import CarsListView from '@/views/CarsListView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +37,12 @@ const router = createRouter({
       name: 'Categories',
       component: CarDetail,
       meta: { title: 'Categories | Rental Vehicles' }
+    },
+     {
+      path: '/carslist',
+      name: 'Cars List',
+      component: CarsListView,
+      meta: { title: 'Cars List | Rental Vehicles' }
     },
 
   ],

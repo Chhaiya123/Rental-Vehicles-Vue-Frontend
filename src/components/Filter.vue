@@ -5,19 +5,19 @@
                 <div class="card-body">
                     <form class="row g-3 align-items-center">
                         <div class="col-12 col-md-6 col-lg-12 col-xl-2">
-                            <h5 class="lhignt-2 pt-1">{{ find.title }}</h5>
+                            <h5 class="lhignt-2 pt-1">Need to Rent a Luxury Car ?</h5>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl" v-for="box in find.labels">
+                        <div class="col-12 col-md-6 col-lg-4 col-xl" v-for="item in find">
                             <div class="border-1 border-start px-3">
-                                <label for="location" class="form-label">{{ box.label }}</label>
-                                <select class="form-select">
+                                <label for="label" class="form-label">{{ item.label }}</label>
+                                <select class="form-select" id="label">
                                     <option selected>. . .</option>
-                                    <option value="1">{{ locations.location }}</option>
+                                    <option value="1" v-for="op in item.options">{{ op.option }}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-12 col-xl-auto">
-                            <RouterLink to="/search" class="btn w-100 btn-primary h-100 px-4 py-2 rounded-pill fs-6"><i class="bi bi-search me-2"></i> Find Now</RouterLink>
+                            <RouterLink to="" class="btn w-100 btn-primary h-100 px-4 py-2 rounded-pill fs-6"><i class="bi bi-search me-2"></i> Find Now</RouterLink>
                         </div>
                     </form>
                 </div>
@@ -30,17 +30,40 @@
 
     import { reactive } from 'vue';
 
-    const find = reactive({
-        title: 'Need to Rent a Luxury Car ?',
-        labels: [
-            {label: 'Branch location'},
-            {label: 'Types of Vehicles'},
-            {label: 'Brand of Vehicles'},
-        ]
-    })
+    const find = [
+        {
+            label: 'Branch location',
+            options: [
+                {option: 'Phnom Penh'},
+                {option: 'Battambang'},
+                {option: 'Siem Reap'},
+            ]
+        },
+        {
+            label: 'Types of Vehicles',
+            options: [
+                {option: 'Motorbike'},
+                {option: 'Cars'},
+                {option: 'Van'},
+            ]
+        },
+        {
+            label: 'Brand of Vehicles',
+            options: [
+                {option: 'HONDA Dream'},
+                {option: 'HONDA Scroopy'},
+                {option: 'HONDA Click'},
+                {option: 'HONDA Zoomer'},
+                {option: 'HONDA ADV'},
+                {option: 'HONDA Bead'},
+                {option: 'SUV'},
+                {option: 'Pickup'},
+                {option: 'Sedan'},
+                {option: 'Coupe'},
+            ]
+        }
+    ]
    
-    const locations = reactive({
-        location : 'Phnom Penh',
-    })
+
 
 </script>
