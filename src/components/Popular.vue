@@ -60,12 +60,14 @@
 
 <script setup>
     import { reactive } from 'vue';
-    import CarCard from './car/CarCard.vue';
     import { Swiper, SwiperSlide } from 'swiper/vue';
+    import CarCard from './car/CarCard.vue';
     import 'swiper/css';
     import 'swiper/css/navigation';
     import { Navigation } from 'swiper/modules';
 
+    import iconDoor from '@/assets/images/svg/icon-door.svg'
+    import iconPassengers from '@/assets/images/svg/icon-passengers.svg'
     const showCount = reactive([7])
 
     const cars = [
@@ -79,14 +81,14 @@
                     {
                         id: 0,
                         title: 'Doors',
-                        icon: 'src/assets/images/svg/icon-door.svg',
+                        icon: iconDoor,
                         number: 4,
                         
                     },
                     {
                         id: 1,
                         title: 'Passengers',
-                        icon: 'src/assets/images/svg/icon-passengers.svg',
+                        icon: iconPassengers,
                         number: 2
                     },
                 ]
@@ -101,13 +103,13 @@
                     {
                         id: 0,
                         title: 'Doors',
-                        icon: 'src/assets/images/svg/icon-door.svg',
+                        icon: iconDoor,
                         number: 4
                     },
                     {
                         id: 1,
                         title: 'Passengers',
-                        icon: 'src/assets/images/svg/icon-passengers.svg',
+                        icon: iconPassengers,
                         number: 2
                     },
                 ]
@@ -122,13 +124,13 @@
                     {
                         id: 0,
                         title: 'Doors',
-                        icon: 'src/assets/images/svg/icon-door.svg',
+                        icon: iconDoor,
                         number: 4
                     },
                     {
                         id: 1,
                         title: 'Passengers',
-                        icon: 'src/assets/images/svg/icon-passengers.svg',
+                        icon: iconPassengers,
                         number: 2
                     },
                 ]
@@ -143,13 +145,13 @@
                     {
                         id: 0,
                         title: 'Doors',
-                        icon: 'src/assets/images/svg/icon-door.svg',
+                        icon: iconDoor,
                         number: 4
                     },
                     {
                         id: 1,
                         title: 'Passengers',
-                        icon: 'src/assets/images/svg/icon-passengers.svg',
+                        icon: iconPassengers,
                         number: 2
                     },
                 ]
@@ -164,13 +166,13 @@
                     {
                         id: 0,
                         title: 'Doors',
-                        icon: 'src/assets/images/svg/icon-door.svg',
+                        icon: iconDoor,
                         number: 4
                     },
                     {
                         id: 1,
                         title: 'Passengers',
-                        icon: 'src/assets/images/svg/icon-passengers.svg',
+                        icon: iconPassengers,
                         number: 2
                     },
                 ]
@@ -185,13 +187,13 @@
                    {
                         id: 0,
                         title: 'Doors',
-                        icon: 'src/assets/images/svg/icon-door.svg',
+                        icon: iconDoor,
                         number: 4
                     },
                     {
                         id: 1,
                         title: 'Passengers',
-                        icon: 'src/assets/images/svg/icon-passengers.svg',
+                        icon: iconPassengers,
                         number: 2
                     },
                 ]
@@ -206,13 +208,13 @@
                    {
                         id: 0,
                         title: 'Doors',
-                        icon: 'src/assets/images/svg/icon-door.svg',
+                        icon: iconDoor,
                         number: 4
                     },
                     {
                         id: 1,
                         title: 'Passengers',
-                        icon: 'src/assets/images/svg/icon-passengers.svg',
+                        icon: iconPassengers,
                         number: 2
                     },
                 ]
@@ -220,7 +222,6 @@
 
         ]
     
-
     const boxStyle = {
         paddingBottom: '100px',
     }

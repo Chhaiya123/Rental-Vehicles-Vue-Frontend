@@ -28,9 +28,9 @@
 <script setup>
 import { RouterLink} from 'vue-router';
     defineProps({
-        title: {type: String},
-        to: {type: String, required: false},
-        label: {type: String, required: false},
+        title: {type: String, required: true},
+        to: {type: String, required: true},
+        label: {type: String, required: true},
         backgroundImage: { type: String, required: true },
     })
     // const bg = props.backgroundImage
