@@ -1,6 +1,6 @@
 <template>
     <NavBar/>
-    <MiniBanner title="Cars List" :background-image="Cover"></MiniBanner>
+    <MiniBanner to="/" title="Cars List" :background-image="Cover"></MiniBanner>
     <section class="section car-types py-10 px-0 px-sm-4 px-md-5">
         <div class="container">
             <div class="row g-4">

@@ -4,10 +4,10 @@
     </RouterLink>
 </template>
 <script setup>
-    const props = defineProps({
+    defineProps({
         to: {type: String ,required: true}, 
         icon: {type: String ,required: true}, 
         label: {type: String ,default: 'Button'}, 
     })
-    console.log('BtnIcon props:', props.to)
+    // console.log('BtnIcon props:', props.to)
 </script>

@@ -266,7 +266,9 @@ section.section{
 .find-cars .form-select:focus{
     box-shadow: none !important;
 }
-
+.input-group .form-control:focus{
+    z-index: 1 !important;
+}
 /* section about */
 section.about .about-cover-1{
     width: 300px;
@@ -424,7 +426,8 @@ section.bg-secondary{
     border-radius: 100%;
     color: #744fff !important;
     border: 1px solid #744fff !important;
-    background-color: #744fff;
+    background-color: #754fff00;
+    transition: 0.5s;
     
 }
 .swiper-button-next:hover,
@@ -437,9 +440,12 @@ section.bg-secondary{
     content: " " !important;
     width: 12px;
     height: 12px;
-    background-image: url(../images/svg/arrow-white.svg) !important;
+    background-image: url(../images/svg/arrow-black.svg) !important;
     background-repeat: no-repeat;
     background-size: 100%;
+}
+.swiper-button-next:hover::after{
+    background-image: url(../images/svg/arrow-white.svg) !important;
 }
 .swiper-button-prev{
     top: 100% !important;
@@ -452,15 +458,19 @@ section.bg-secondary{
     color: #744fff !important;
     border: 1px solid #744fff !important;
     transition: 0.4s ease-out;
-    background-color: #744fff;
+    background-color: #754fff00;
+    transition: 0.5s;
 }
 .swiper-button-prev::after{
     content: " " !important;
     width: 12px;
     height: 12px;
-    background-image: url(../images/svg/arrow-white.svg) !important;
+    background-image: url(../images/svg/arrow-black.svg) !important;
     background-repeat: no-repeat;
     background-size: 100%;
+}
+.swiper-button-prev:hover::after{
+    background-image: url(../images/svg/arrow-white.svg) !important;
 }
 
 /* .swiper-slide img {
@@ -825,7 +835,7 @@ section.bg-secondary{
 .auth-section .card{
     padding: 50px 24px !important;
     border-radius: 30px;
-    transform: scale(0.96);
+    transform: scale(0.88) !important;
 }
 
 .form-select{

@@ -4,6 +4,8 @@ import ContactUsView from '@/views/ContactUsView.vue'
 import CarDetail from '@/views/CarDetail.vue'
 import AboutView from '@/views/AboutView.vue'
 import CarsListView from '@/views/CarsListView.vue'
+import LoginView from '@/views/Auth/LoginView.vue'
+import RegisterView from '@/views/Auth/RegisterView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,60 +14,74 @@ const router = createRouter({
       path: '/',
       name: 'Home',
       component: HomeView,
-      meta: { title: 'Home | Rental Vehicles' }
+      meta: {requiresAuth: true ,title: 'Home | Rental Vehicles' }
+    },
+    {
+      path: '/leading',
+      name: 'Leading',
+      component: HomeView,
+      meta: {requiresAuth: false ,title: 'Leading | Rental Vehicles' }
     },
      {
       path: '/contact',
       name: 'Contact Us',
       component: ContactUsView,
-      meta: { title: 'Contact Us | Rental Vehicles' }
+      meta: {requiresAuth: true, title: 'Contact Us | Rental Vehicles' }
     },
      {
       path: '/about',
       name: 'About Us',
       component: AboutView,
-      meta: { title: 'About Us | Rental Vehicles' }
+      meta: {requiresAuth: true, title: 'About Us | Rental Vehicles' }
     },
      {
       path: '/car/detail',
       name: 'Detail',
       component: CarDetail,
-      meta: { title: 'Detail | Rental Vehicles' }
+      meta: {requiresAuth: true, title: 'Detail | Rental Vehicles' }
     },
      {
       path: '/categories',
       name: 'Categories',
       component: CarDetail,
-      meta: { title: 'Categories | Rental Vehicles' }
+      meta: {requiresAuth: true, title: 'Categories | Rental Vehicles' }
     },
      {
       path: '/carslist',
       name: 'Cars List',
       component: CarsListView,
-      meta: { title: 'Cars List | Rental Vehicles' }
+      meta: {requiresAuth: true, title: 'Cars List | Rental Vehicles' }
+    },
+    {
+      path: '/signin',
+      name: 'Sign In',
+      component: LoginView,
+      meta: { title: 'Sign In | Rental Vehicles' }
+    },
+    {
+      path: '/signup',
+      name: 'Sign Up',
+      component: RegisterView,
+      meta: { title: 'Sign Up | Rental Vehicles' }
     },
 
   ],
 })
 
-
 let intervalId = null
-router.afterEach((to) => {
+router.beforeEach((to) => {
   const baseTitle = to.meta.title ||  'Rental Vehicles'
-  let scrollingTitle = baseTitle + ' • '
-
+  let scrollingTitle = baseTitle
+  document.title = scrollingTitle
   if(intervalId){
     clearInterval(intervalId)
   }
-
-  intervalId = setInterval(()=>{
-    scrollingTitle = scrollingTitle.slice(1) + scrollingTitle.charAt(0)
-    document.title = scrollingTitle
-  }, 300)
-
-  // onUnmounted(() => {
-  //   clearInterval(intervalId)
-  // })
-
+  const isLoggedIn = document.cookie.includes('UserName')
+  console.log(isLoggedIn)
+  console.log(to.meta.requiresAuth )
+  if(to.meta.requiresAuth && !isLoggedIn){
+     router.push('/leading')
+  }
 })
+
 export default router

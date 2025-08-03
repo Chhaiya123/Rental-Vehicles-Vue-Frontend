@@ -7,10 +7,10 @@
                         <div class="col-12 col-md-6 col-lg-12 col-xl-2">
                             <h5 class="lhignt-2 pt-1">Need to Rent a Luxury Car ?</h5>
                         </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl" v-for="item in find">
+                        <div class="col-12 col-md-6 col-lg-4 col-xl" v-for="item in find" :key="item.id">
                             <div class="border-1 border-start px-3">
-                                <label for="label" class="form-label">{{ item.label }}</label>
-                                <select class="form-select" id="label">
+                                <label :for="item.id" class="form-label">{{ item.label }}</label>
+                                <select class="form-select" :id="item.id" autocomplete="form-select">
                                     <option selected>. . .</option>
                                     <option value="1" v-for="op in item.options">{{ op.option }}</option>
                                 </select>
@@ -32,6 +32,7 @@
 
     const find = [
         {
+            id: 0,
             label: 'Branch location',
             options: [
                 {option: 'Phnom Penh'},
@@ -40,6 +41,7 @@
             ]
         },
         {
+            id: 1,
             label: 'Types of Vehicles',
             options: [
                 {option: 'Motorbike'},
@@ -48,6 +50,7 @@
             ]
         },
         {
+            id: 2,
             label: 'Brand of Vehicles',
             options: [
                 {option: 'HONDA Dream'},
